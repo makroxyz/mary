@@ -21,7 +21,11 @@ class Badge extends Component
     {
         return <<<'HTML'
                 <div {{ $attributes->class(["badge"])}}>
+                @if($value)
                     {{ $value }}
+                @else
+                    {{ $slot }}
+                @endif
                 </div>
             HTML;
     }
